@@ -17,13 +17,7 @@
   </div>
   <div class="card-group">
     <div class="card text-white bg-primary ml-1 mr-1 mb-3 col col-4" *ngFor="let product of products">
-      <div class="card-header">{{product.id}} - {{product.category}}</div>
-      <div class="card-body">
-        <h4 class="card-title">{{product.name}}</h4>
-        <p class="card-text">{{product.description}}</p>
-        <p class="card-text">{{product.price | currency:'EUR'}}</p>
-        <img [src]="product.image" alt="not found">
-      </div>
+      <app-product-card [product]="product"></app-product-card>
     </div>
   </div>
 </div>
