@@ -1,5 +1,6 @@
-<h2>Questa è una {{title}}</h2>
-<h3>Questo è il nostro {{subtitle}}</h3>
+<h2>{{title | customPipe: '*' | uppercase}}</h2>
+<h3>{{subtitle | uppercase}}</h3>
+<h3>Oggi è il giorno {{dataOdierna | date: 'dd/MM/yyyy'}}</h3>
 <a class='btn btn-warning' (click)='aggiungiProdotto()'>
   Aggiungi prodotto
 </a>
@@ -22,7 +23,7 @@ Svuota catalogo
 <td>{{product.id}}</td>
 <td>{{product.name}}</td>
 <td>{{product.category}}</td>
-<td>{{product.price}}</td>
+<td>{{product.price | currency : 'EUR'}}</td>
 <td>{{product.description}}</td>
 <td><img [src]="product.image" alt="not found"></td>
   </tr>

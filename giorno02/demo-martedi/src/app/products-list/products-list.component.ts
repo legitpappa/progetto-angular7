@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { provideRouterInitializer } from '@angular/router/src/router_module';
-import { Product } from '../models/product';
-import { PRODUCTS } from './data';
+import { IPRODUCTS } from './data';
+import { IProduct } from '../models/iProduct';
 
 @Component({
   selector: 'app-products-list',
@@ -12,22 +11,24 @@ export class ProductsListComponent implements OnInit {
   title: string;
   subtitle: string;
   productNumber: number;
-  products: Product[] = [];
+  products: IProduct[] = [];
   example = 'ciao';
+  dataOdierna = new Date();
 
   constructor() {
     this.title = 'lista prodotti';
     this.subtitle = 'catalogo';
-    this.products = PRODUCTS;
+    this.products = IPRODUCTS;
     this.productNumber = this.products.length;
   }
-
   esempioDiClick() {
     this.products = [];
   }
   aggiungiProdotto() {
-    this.products.push(new Product(this.products.length + 1, 'La Bibbia', 'libro', 15, 'fantasy',
-      'https://img.libreriadelsanto.it/books/s/s0OScTMBgYWl_s4'));
+    this.products.push({
+      id: this.products.length + 1, name: 'La Bibbia', category: 'libro', price: 15, description: 'fantasy',
+      image: 'https://img.libreriadelsanto.it/books/s/s0OScTMBgYWl_s4'
+    });
   }
 
   ngOnInit() {
