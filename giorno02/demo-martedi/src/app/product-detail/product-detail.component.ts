@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IProduct } from '../models/iProduct';
 
 @Component({
@@ -9,12 +9,14 @@ import { IProduct } from '../models/iProduct';
 export class ProductDetailComponent implements OnInit {
 @Input() title: string;
 @Input() selectedProduct: IProduct;
-
-  constructor() { }
+@Output() notifica: EventEmitter<IProduct>;
+  constructor() {
+    this.notifica = new EventEmitter<IProduct>();
+   }
 
   ngOnInit() {
   }
 updateProduct() {
-  alert(this.selectedProduct.price);
+  this.notifica.emit(this.selectedProduct);
 }
 }

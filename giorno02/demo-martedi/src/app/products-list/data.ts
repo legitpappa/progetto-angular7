@@ -28,8 +28,7 @@ export const IPRODUCTS: IProduct[] = [
     description: 'libro',
     price: 13,
     category: 'fantasy',
-    image: 'https://images.pottermore.com/bxd3o8b291gf'
-      + '/3SQ3X2km8wkQIsQWa02yOY/25f258f21bdbe5f552a4419bb775f4f0/HarryPotter_WB_F4_HarryPotterMidshot_Promo_080615_Port.jpg'
+    image: 'https://i.redd.it/6lbx53qz7sn11.jpg'
   },
   {
     id: 3,

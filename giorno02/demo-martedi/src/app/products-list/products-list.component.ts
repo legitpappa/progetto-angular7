@@ -15,7 +15,6 @@ export class ProductsListComponent implements OnInit, OnDestroy, OnChanges {
   subtitle: string;
   productNumber: number;
   products: IProduct[] = [];
-  @Input()example = 'ciao';
   dataOdierna = new Date();
   selectedProduct: IProduct;
   showTable = true;
@@ -50,5 +49,8 @@ export class ProductsListComponent implements OnInit, OnDestroy, OnChanges {
   choosenProduct(selectedProduct: IProduct) {
     this.selectedProduct = selectedProduct;
     this.showTable = false;
+  }
+  notificaDaFiglio(messaggio: IProduct) {
+    this.showTable = true;
   }
 }

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CustomPipe } from './pipes/custom-pipe';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
     ProductDetailComponent,
-    CustomPipe
+    CustomPipe,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

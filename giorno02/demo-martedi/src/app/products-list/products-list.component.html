@@ -1,40 +1,29 @@
-
 <div *ngIf="showTable === false">
-<app-product-detail [title]='title' [selectedProduct]='selectedProduct'></app-product-detail>
+  <app-product-detail [title]='title' [selectedProduct]='selectedProduct' (notifica)="notificaDaFiglio($event)">
+  </app-product-detail>
 </div>
 <div *ngIf="products && products.length > 0 && showTable === true">
-    <h2>{{title | customPipe: '*' | uppercase}}</h2>
-    <h3>{{subtitle | uppercase}}</h3>
-    <h3>Oggi è il giorno {{dataOdierna | date: 'dd/MM/yyyy'}}</h3>
+  <h2>{{title | customPipe: '*' | uppercase}}</h2>
+  <h3>{{subtitle | uppercase}} <span class="badge badge-primary badge-pill">{{productNumber}}</span></h3>
+  <h3>Oggi è il giorno {{dataOdierna | date: 'dd/MM/yyyy'}}</h3>
+  <div class="btn-group margine-bottoni">
     <a class='btn btn-warning' (click)='aggiungiProdotto()'>
       Aggiungi prodotto
     </a>
 
     <a class='btn btn-success' (click)='esempioDiClick()'>
-    Svuota catalogo
+      Svuota catalogo
     </a>
-  <p>Il numero totale dei prodotti è {{productNumber}}</p>
-<table class="table table-hover table-striped table-responsive">
-  <th>id</th>
-  <th>name</th>
-  <th>category</th>
-  <th>price</th>
-  <th>description</th>
-  <th>image</th>
-  <th></th>
-  <tr *ngFor="let product of products">
-<td>{{product.id}}</td>
-<td>{{product.name}}</td>
-<td>{{product.category}}</td>
-<td>{{product.price | currency : 'EUR'}}</td>
-<td>{{product.description}}</td>
-<td><img [src]="product.image" alt="not found"></td>
-<td><button class="btn btn-dark" (click)="choosenProduct(product)">Show</button></td>
-  </tr>
-</table>
-<input [(ngModel)]="example">
-<p>{{example}}</p>
+  </div>
+  <div class="card-group">
+    <div class="card text-white bg-primary ml-1 mr-1 mb-3 col col-4" *ngFor="let product of products">
+      <div class="card-header">{{product.id}} - {{product.category}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{product.name}}</h4>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">{{product.price | currency:'EUR'}}</p>
+        <img [src]="product.image" alt="not found">
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
