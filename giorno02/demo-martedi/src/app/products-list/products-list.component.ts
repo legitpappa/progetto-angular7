@@ -13,6 +13,7 @@ export class ProductsListComponent implements OnInit {
   subtitle: string;
   productNumber: number;
   products: Product[] = [];
+  example = 'ciao';
 
   constructor() {
     this.title = 'lista prodotti';
@@ -23,7 +24,6 @@ export class ProductsListComponent implements OnInit {
 
   esempioDiClick() {
     this.products = [];
-
   }
   aggiungiProdotto() {
     this.products.push(new Product(this.products.length + 1, 'La Bibbia', 'libro', 15, 'fantasy',

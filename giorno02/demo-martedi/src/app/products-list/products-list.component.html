@@ -3,9 +3,12 @@
 <a class='btn btn-warning' (click)='aggiungiProdotto()'>
   Aggiungi prodotto
 </a>
+
 <a class='btn btn-success' (click)='esempioDiClick()'>
 Svuota catalogo
 </a>
+
+<app-product-detail></app-product-detail>
 <div *ngIf="products && products.length > 0">
   <p>Il numero totale dei prodotti è {{productNumber}}</p>
 <table class="table table-hover table-striped table-responsive">
@@ -25,4 +28,7 @@ Svuota catalogo
   </tr>
 </table>
 </div>
+<input [(ngModel)]="example">
+<p>{{example}}</p>
+
 
