@@ -1,7 +1,13 @@
 <div class="card-header">{{product.id}} - {{product.category}}</div>
 <div class="card-body">
-  <h4 class="card-title">{{product.name}}</h4>
-  <p class="card-text">{{product.description}}</p>
-  <p class="card-text">{{product.price | currency:'EUR'}}</p>
-  <img [src]="product.image" alt="not found">
+    <h4 class="card-title">{{product.name}}</h4>
+  <div class="row">
+    <div class="col col-6">
+        <img class="rounded-circle" [src]="product.image" alt="not found">
+    </div>
+    <div class="col col-6">
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">{{product.price | currency:'EUR'}}</p>
+    </div>
+  </div>
 </div>
