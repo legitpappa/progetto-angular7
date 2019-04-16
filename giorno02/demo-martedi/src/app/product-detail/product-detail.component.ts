@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IProduct } from '../models/iProduct';
 
 @Component({
   selector: 'app-product-detail',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+@Input() title: string;
+@Input() selectedProduct: IProduct;
 
   constructor() { }
 
   ngOnInit() {
   }
-
+updateProduct() {
+  alert(this.selectedProduct.price);
+}
 }

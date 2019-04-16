@@ -1,16 +1,18 @@
-<h2>{{title | customPipe: '*' | uppercase}}</h2>
-<h3>{{subtitle | uppercase}}</h3>
-<h3>Oggi è il giorno {{dataOdierna | date: 'dd/MM/yyyy'}}</h3>
-<a class='btn btn-warning' (click)='aggiungiProdotto()'>
-  Aggiungi prodotto
-</a>
 
-<a class='btn btn-success' (click)='esempioDiClick()'>
-Svuota catalogo
-</a>
+<div *ngIf="showTable === false">
+<app-product-detail [title]='title' [selectedProduct]='selectedProduct'></app-product-detail>
+</div>
+<div *ngIf="products && products.length > 0 && showTable === true">
+    <h2>{{title | customPipe: '*' | uppercase}}</h2>
+    <h3>{{subtitle | uppercase}}</h3>
+    <h3>Oggi è il giorno {{dataOdierna | date: 'dd/MM/yyyy'}}</h3>
+    <a class='btn btn-warning' (click)='aggiungiProdotto()'>
+      Aggiungi prodotto
+    </a>
 
-<app-product-detail></app-product-detail>
-<div *ngIf="products && products.length > 0">
+    <a class='btn btn-success' (click)='esempioDiClick()'>
+    Svuota catalogo
+    </a>
   <p>Il numero totale dei prodotti è {{productNumber}}</p>
 <table class="table table-hover table-striped table-responsive">
   <th>id</th>
@@ -19,6 +21,7 @@ Svuota catalogo
   <th>price</th>
   <th>description</th>
   <th>image</th>
+  <th></th>
   <tr *ngFor="let product of products">
 <td>{{product.id}}</td>
 <td>{{product.name}}</td>
@@ -26,10 +29,12 @@ Svuota catalogo
 <td>{{product.price | currency : 'EUR'}}</td>
 <td>{{product.description}}</td>
 <td><img [src]="product.image" alt="not found"></td>
+<td><button class="btn btn-dark" (click)="choosenProduct(product)">Show</button></td>
   </tr>
 </table>
-</div>
 <input [(ngModel)]="example">
 <p>{{example}}</p>
+</div>
+
 
 
