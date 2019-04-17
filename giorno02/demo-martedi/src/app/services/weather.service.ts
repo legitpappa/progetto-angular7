@@ -7,7 +7,7 @@ import { WeatherData } from '../models/weather';
   providedIn: 'root'
 })
 export class WeatherService {
-  private url = 'http://api.openweathermap.org/data/2.5/weather?APPID=ee6b293d773f4fcd7e434f79bbc341f2&units=metric&lang=it';
+  private url = 'http://api.openweathermap.org/data/2.5/weather?APPID=xxxxxxxx&units=metric&lang=it';
 
   getWeather(lat: number, lon: number): Observable<WeatherData> {
     return this.http.get<WeatherData>(`${this.url}&lat=${lat}&lon=${lon}`);
