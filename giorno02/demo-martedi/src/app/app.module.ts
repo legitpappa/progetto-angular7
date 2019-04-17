@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './products-list/products-list.component';
@@ -16,6 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductDetailByNavigationComponent } from './product-detail-by-navigation/product-detail-by-navigation.component';
 import { ProductsService } from './services/products.service';
+import { WeatherService } from './services/weather.service';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +36,10 @@ import { ProductsService } from './services/products.service';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [ContextService, AuthenticationService, ProductsService],
+  providers: [ContextService, AuthenticationService, ProductsService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
