@@ -5,12 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailByNavigationComponent } from './product-detail-by-navigation/product-detail-by-navigation.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   { path: 'products', component: ProductsListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'products/:id', component: ProductDetailByNavigationComponent },
+  { path: 'weather', component: WeatherComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

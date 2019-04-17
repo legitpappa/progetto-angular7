@@ -1,0 +1,13 @@
+<div *ngIf="weatherData">
+
+  <h1>{{weatherData.sys.country}}</h1>
+  <h2>{{weatherData.name}}</h2>
+  <h3> LA TEMPERATURA é {{weatherData.main.temp}} °C <img [src]='iconURL'></h3>
+  <h3> Alba {{weatherData.sys.sunrise*1000 | date: 'HH:mm:ss'}} </h3>
+  <h3> Tramonto {{weatherData.sys.sunset*1000| date: 'HH:mm:ss'}}</h3>
+  <h3> Rilevazione {{weatherData.dt*1000| date: 'full'}}</h3>
+
+
+  <agm-map [latitude]='position.coords.latitude' [longitude]='position.coords.longitude' [zoom]='16'><agm-marker [latitude]='position.coords.latitude' [longitude]='position.coords.longitude'></agm-marker> </agm-map>
+
+</div>
