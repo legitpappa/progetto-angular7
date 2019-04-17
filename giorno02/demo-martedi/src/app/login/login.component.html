@@ -1,0 +1,18 @@
+<form>
+  <div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" class="form-control" [(ngModel)]="credentials.username" name="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" class="form-control" [(ngModel)]="credentials.password" name="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary mr-2" (click)="eseguiLogin()">Login</button>
+    <span class="text text-danger" *ngIf="currentUser === null" >{{passwordError}}</span>
+  </div>
+</form>
+
+<div *ngIf="currentUser">{{currentUser.birthDate | date: 'dd/MM/yyy'}}</div>

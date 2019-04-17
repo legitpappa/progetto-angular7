@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, Input } from '@
 import { IPRODUCTS } from './data';
 import { IProduct } from '../models/iProduct';
 import { Alert } from 'selenium-webdriver';
+import { ContextService } from '../services/context.service';
 
 @Component({
   selector: 'app-products-list',
@@ -19,12 +20,13 @@ export class ProductsListComponent implements OnInit, OnDestroy, OnChanges {
   selectedProduct: IProduct;
   showTable = true;
 
-  constructor() {
-    this.title = 'lista prodotti';
+  constructor(private contextService: ContextService) {
+    this.title = this.contextService.getTitleProductsListComponent();
     this.subtitle = 'catalogo';
     this.products = IPRODUCTS;
     this.productNumber = this.products.length;
-    console.log('sono nel costruttore');
+
+
   }
   esempioDiClick() {
     this.products = [];
