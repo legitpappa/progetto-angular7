@@ -43,7 +43,7 @@ import { WeatherComponent } from './weather/weather.component';
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDabTPGWOPCR7V2SkXmjaJ39pjQSIfqEJs'
+      apiKey: 'xxxxxxxxxxxx'
     })
   ],
   providers: [ContextService, AuthenticationService, ProductsService, WeatherService],
