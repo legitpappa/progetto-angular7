@@ -22,7 +22,7 @@ export class ProductsListComponent {
   showTable = true;
 
   constructor(private contextService: ContextService,
-    private productsService: ProductsService, private router: Router) {
+              private productsService: ProductsService, private router: Router) {
     this.title = this.contextService.getTitleProductsListComponent();
     this.subtitle = 'catalogo';
     this.products = this.productsService.getAllProducts();
