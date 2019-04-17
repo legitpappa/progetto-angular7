@@ -17,7 +17,7 @@
   </div>
   <div class="row allinea">
       <div class="card text-white bg-primary col-3" *ngFor="let product of products">
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card [product]="product" (click)="choosenProduct(product)"></app-product-card>
       </div>
   </div>
 </div>

@@ -11,6 +11,11 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ContextService } from './services/context.service';
 import { AuthenticationService } from './services/authentication.service';
 import { LoginComponent } from './login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MenuComponent } from './menu/menu.component';
+import { ProductDetailByNavigationComponent } from './product-detail-by-navigation/product-detail-by-navigation.component';
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +24,18 @@ import { LoginComponent } from './login/login.component';
     ProductDetailComponent,
     CustomPipe,
     ProductCardComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeComponent,
+    NotFoundComponent,
+    MenuComponent,
+    ProductDetailByNavigationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ContextService, AuthenticationService],
+  providers: [ContextService, AuthenticationService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
