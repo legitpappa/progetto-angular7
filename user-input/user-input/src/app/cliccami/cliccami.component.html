@@ -1,0 +1,11 @@
+<h3> User Input</h3>
+<button class="btn btn-primary" (click)="cliccami()">Cliccami</button>
+{{message}}
+<input type="text" (keyup)="onKey($event)">
+{{valori}}
+
+<input type="text" (keyup)="onkey1($event)">
+{{valori1}}
+
+<input #box (keyup)="onkey2(box.value)">
+<p>{{valori2}}</p>

@@ -1,0 +1,15 @@
+<input type="text" [formControl]="nomeControl">
+<p *ngFor="let x of nomeManipolato">{{x}}</p>
+
+<div class="formGroup">
+  <label>Giapponese</label>
+  <textarea>{{jaTranslatedText[0].translatedText}}</textarea>
+</div>
+<div class="formGroup">
+    <label>Arabo</label>
+  <textarea>{{arTranslatedText[0].translatedText}}</textarea>
+</div>
+<div class="formGroup">
+    <label>Finlandese</label>
+  <textarea>{{fiTranslatedText[0].translatedText}}</textarea>
+</div>

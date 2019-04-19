@@ -1,0 +1,32 @@
+<br>
+<hr>
+<div class="container">
+
+  <form [formGroup]="formProfile1" (ngSubmit)="onSubmit()">
+    <label>Nome:
+      <input type="text" formControlName="nome" required>
+    </label>
+    <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
+        <div *ngIf="nome.errors.required"> Il Nome è obbligatorio</div>
+      </div>
+
+    <label> Cognome:
+      <input type="text" formControlName="cognome" required>
+    </label>
+    <div *ngIf="cognome.invalid && (cognome.dirty || cognome.touched)" class="alert alert-danger">
+        <div *ngIf="cognome.errors.required"> Il Cognome è obbligatorio</div>
+        <div *ngIf="cognome.errors.minlength">minimi 4 lettere</div>
+      </div>
+    <h3>Indirizzo</h3>
+    <div>
+      <label for="via">Via</label>
+      <input type="text" class="fomr-control" id="via" formControlName="via">
+      <p>
+        <button class="btn btn-primary" (click)="aggiornaProfilo()">Aggiorna Prodilo</button>
+      </p>
+    </div>
+    <p>
+      <button type="submit" class=" btn btn-primary" [disabled]="!formProfile.valid">Save</button>
+    </p>
+  </form>
+</div>
